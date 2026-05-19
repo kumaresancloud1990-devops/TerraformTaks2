@@ -1,0 +1,136 @@
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .wrap{background:#0f2d5e;padding:2rem 1.5rem;font-family:Arial,sans-serif;border-radius:16px}
+  .hero{text-align:center;margin-bottom:1.75rem}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.2);border-radius:999px;padding:5px 14px;font-size:12px;color:#b8d4f8;margin-bottom:1rem}
+  .hero h1{font-size:22px;font-weight:600;color:#ffffff;margin-bottom:.4rem}
+  .hero p{font-size:15px;color:#93b8e8;margin-bottom:1rem}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .pill{font-size:12px;font-weight:500;padding:4px 13px;border-radius:999px;border:0.5px solid rgba(255,255,255,0.25);color:#cce0ff;background:rgba(255,255,255,0.1)}
+  .divider{height:0.5px;background:rgba(255,255,255,0.15);margin-bottom:1rem}
+  .section-label{font-size:11px;font-weight:600;color:#7aaee0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem}
+  .region-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem}
+  .region-card{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.2);border-radius:12px;padding:1rem 1.25rem;display:flex;gap:12px;align-items:flex-start}
+  .ricon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,0.15)}
+  .region-label{font-size:11px;font-weight:500;color:#7aaee0;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+  .region-name{font-size:15px;font-weight:600;color:#ffffff}
+  .region-code{font-size:12px;color:#93b8e8;font-family:monospace}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:1.5rem}
+  .card{background:#ffffff;border-radius:12px;padding:1rem 1.25rem}
+  .cicon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+  .card h3{font-size:11px;font-weight:600;color:#185FA5;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+  .card p{font-size:14px;color:#1e3a5f;line-height:1.7}
+  .card ul{list-style:none}
+  .card li{font-size:14px;color:#1e3a5f;line-height:1.8;display:flex;align-items:center;gap:7px}
+  .dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:#185FA5}
+  .footer{border-top:0.5px solid rgba(255,255,255,0.15);padding-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .author{display:flex;align-items:center;gap:10px}
+  .avatar{width:38px;height:38px;border-radius:50%;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#ffffff;flex-shrink:0}
+  .author-name{font-size:14px;font-weight:600;color:#ffffff}
+  .author-tags{font-size:12px;color:#93b8e8}
+  .links{display:flex;gap:8px}
+  .btn{display:flex;align-items:center;gap:6px;font-size:13px;padding:8px 14px;border-radius:8px;border:0.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#ffffff;cursor:pointer;text-decoration:none;transition:background .2s}
+  .btn:hover{background:rgba(255,255,255,0.2)}
+</style>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Infrastructure as Code
+    </div>
+    <h1>Terraform Multi-Region EC2 Deployment</h1>
+    <p>Automated AWS infrastructure with Nginx on Ubuntu</p>
+    <div class="pills">
+      <span class="pill">☁️ AWS EC2</span>
+      <span class="pill">⚙️ Terraform</span>
+      <span class="pill">🌐 Nginx</span>
+      <span class="pill">🐧 Ubuntu</span>
+      <span class="pill">💻 AWS CLI</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="section-label">AWS regions</p>
+  <div class="region-row">
+    <div class="region-card">
+      <div class="ricon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="region-label">Primary</div>
+        <div class="region-name">Mumbai</div>
+        <div class="region-code">ap-south-1</div>
+      </div>
+    </div>
+    <div class="region-card">
+      <div class="ricon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="region-label">Secondary</div>
+        <div class="region-name">Virginia</div>
+        <div class="region-code">us-east-1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p class="section-label">Project details</p>
+  <div class="cards">
+    <div class="card">
+      <div class="cicon" style="background:#dbeafe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h3>Objective</h3>
+      <p>Deploy 2 EC2 instances across two AWS regions with Nginx auto-provisioned via Terraform.</p>
+    </div>
+    <div class="card">
+      <div class="cicon" style="background:#dbeafe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>Features</h3>
+      <ul>
+        <li><span class="dot"></span>Infrastructure as Code</li>
+        <li><span class="dot"></span>Multi-region deploy</li>
+        <li><span class="dot"></span>Automated Nginx setup</li>
+        <li><span class="dot"></span>Reusable modules</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="cicon" style="background:#dbeafe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Tech stack</h3>
+      <ul>
+        <li><span class="dot"></span>AWS EC2</li>
+        <li><span class="dot"></span>Terraform</li>
+        <li><span class="dot"></span>AWS CLI</li>
+        <li><span class="dot"></span>Ubuntu Server</li>
+        <li><span class="dot"></span>Nginx</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="author">
+      <div class="avatar">KV</div>
+      <div>
+        <div class="author-name">Kumaresan Vijayakumar</div>
+        <div class="author-tags">DevOps · Cloud · Terraform · AWS</div>
+      </div>
+    </div>
+    <div class="links">
+      <a class="btn" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="#">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        AWS Console
+      </a>
+    </div>
+  </div>
+
+</div>
